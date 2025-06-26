@@ -1,6 +1,10 @@
 services:
   - type: web
-    name: diabetes-mlops-app
+    name: diabetes-app
     env: python
-    buildCommand: pip install -r app/requirements.txt
-    startCommand: streamlit run app/app.py
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run app/app.py --server.port $PORT --server.address 0.0.0.0"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+
