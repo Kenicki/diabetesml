@@ -2,21 +2,17 @@ import streamlit as st
 import joblib
 import numpy as np
 
-# Load model
-model = joblib.load('../src/model.joblib')
+model = joblib.load('models/model.joblib')
 
 st.title("Diabetes Prediction App")
 
-features = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", 
-            "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
-user_input = []
+# User input
+fields = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
+values = []
 
-for feature in features:
-    value = st.number_input(f"{feature}", min_value=0.0)
-    user_input.append(value)
+for field in fields:
+    values.append(st.number_input(field, step=1.0))
 
 if st.button("Predict"):
-    input_array = np.array(user_input).reshape(1, -1)
-    prediction = model.predict(input_array)
-    result = "Diabetic" if prediction[0] == 1 else "Not Diabetic"
-    st.success(f"Prediction: {result}")
+    pred = model.predict([np.array(values)])
+    st.success("Diabetic" if pred[0] == 1 else "Not Diabetic")

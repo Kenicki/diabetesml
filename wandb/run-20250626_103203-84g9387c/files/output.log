@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "D:\mlops\src\train.py", line 34, in <module>
+    joblib.dump(model, 'models/model.joblib')
+  File "D:\mlops\.venv\Lib\site-packages\joblib\numpy_pickle.py", line 599, in dump
+    with open(filename, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'models/model.joblib'
