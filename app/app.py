@@ -2,7 +2,8 @@ import streamlit as st
 import joblib
 import numpy as np
 
-model = joblib.load('src/model.joblib')
+model = joblib.load('models/model.joblib')
+
 
 st.title("Diabetes Prediction App")
 
