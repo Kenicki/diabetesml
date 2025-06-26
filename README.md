@@ -18,7 +18,7 @@ This project uses a Decision Tree Classifier to predict diabetes based on medica
 - GitHub
 
 ## App Demo
-[Click here to access the app](https://diabetes-mlops-app.onrender.com)
+[Click here to access the app](https://diabetesml-eyv9.onrender.com)
 
 ## Instructions
 1. Clone the repo
